@@ -1,0 +1,14 @@
+#use_frameworks!
+
+platform :ios, '8.0'
+
+target 'JQKit_Example' do
+  pod 'JQKit', :path => '../'
+
+  target 'JQKit_Tests' do
+    inherit! :search_paths
+
+    pod 'Specta'
+    pod 'Expecta'
+  end
+end
