@@ -33,13 +33,13 @@
 }
 
 + (void)reportError:(NSError *)error {
-    for (id<BFErrorReportHandler> handler in [[self sharedReporter] handlers]) {
+    for (id<JQErrorReportHandlerProtocol> handler in [[self sharedReporter] handlers]) {
         [handler handleError:error];
     }
 }
 
 + (void)reportException:(NSException *)exception {
-    for (id<BFErrorReportHandler> handler in [[self sharedReporter] handlers]) {
+    for (id<JQErrorReportHandlerProtocol> handler in [[self sharedReporter] handlers]) {
         [handler handleException:exception];
     }
 }
